@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Starter Template</title>
-  </head>
-  <body>
-
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>We've got jokes!</title>
+</head>
+<body>
+  <div class="container">
+    <h1>We've got jokes!</h1>
+    <form>
+      <label for="location">Select a category:</label>
+      <select id="category" name="category">
+        <option value="Programming">Programming</option>
+        <option value="Miscellaneous">Miscellaneous</option>
+        <!-- <option value="Dark">Dark</option> -->
+        <!-- <option value="Any">Any</option> -->
+      </select>
+      <button type="submit" class="btn btn-primary">Don't make me laugh</button>
+    </form>
+    <div class="errors"></div>
+    <div class="single">
+      <div class="joke"></div>
+    </div>
+    <div class="twopart">
+      <div class="joke-setup"></div>
+      <div class="joke-delivery"></div>
+    </div>
+  </div>
+</body>
 </html>
