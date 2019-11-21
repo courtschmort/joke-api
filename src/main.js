@@ -10,6 +10,7 @@ import './styles.css';
 $(document).ready(function() {
   $('form').submit(function() {
     event.preventDefault();
+    $('.output').css('display', 'none');
     const category = $('#select-category').val();
 
     (async () => {
@@ -25,7 +26,8 @@ $(document).ready(function() {
     })();
 
     function getElements(response) {
-      if (response.type === 'twopart') {
+      $('.output').show();
+      if (response.delivery) {
         $('.joke-setup').text(`${response.setup}`);
         $('.joke-delivery').text(`${response.delivery}`);
         $('.twopart').show();
