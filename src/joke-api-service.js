@@ -5,7 +5,7 @@ export class JokeAPIService {
       let jsonifiedResponse = await response.json();
       return jsonifiedResponse;
     } catch(error) {
-      alert(`There was an error handling your request: ${error.message}`);
+      console.error(`There was an error handling your request: ${error.message}`);
     }
   }
 }

@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { JokeAPIService } from './joke-api-service.js';
 // import img from './file.png';
-// import {  } from './file.js';
+
 
 $(document).ready(function() {
   $('form').submit(function() {
@@ -16,7 +16,6 @@ $(document).ready(function() {
       let jokeApiService = new JokeAPIService();
       const response = await jokeApiService.getJokeByCategory(category);
       getElements(response);
-      console.log(response);
     })();
 
     function getElements(response) {
