@@ -1,3 +1,38 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  background-color: #F5BB00;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Calistoga', cursive;
+  font-size: 5rem;
+}
+
+label {
+  font-size: 1.5rem;
+}
+
 .single, .twopart {
   display: none;
+  font-size: 1.5rem;
+  background-color: #F7C625;
+  border-radius: .25rem;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.joke, .joke-setup {
+  font-weight: 400;
+}
+
+.giphy {
+  width: 100%;
+  margin-top: 1rem;
 }

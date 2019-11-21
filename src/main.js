@@ -1,16 +1,16 @@
-// import
+import { JokeAPIService } from './joke-api-service.js';
+import { GiphyService } from './giphy-service.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import { JokeAPIService } from './joke-api-service.js';
 // import img from './file.png';
 
 
 $(document).ready(function() {
   $('form').submit(function() {
     event.preventDefault();
-    const category = $('#category').val();
+    const category = $('#select-category').val();
 
     (async () => {
       let jokeApiService = new JokeAPIService();
@@ -18,8 +18,14 @@ $(document).ready(function() {
       getElements(response);
     })();
 
+    (async () => {
+      let giphyService = new GiphyService();
+      const giphyResponse = await giphyService.getGiphy();
+      getGiphy(giphyResponse);
+    })();
+
     function getElements(response) {
-      if (response.type === "twopart") {
+      if (response.type === 'twopart') {
         $('.joke-setup').text(`${response.setup}`);
         $('.joke-delivery').text(`${response.delivery}`);
         $('.twopart').show();
@@ -29,6 +35,11 @@ $(document).ready(function() {
         $('.single').show();
         $('.twopart').hide();
       }
+    }
+
+    function getGiphy(giphyResponse) {
+      let displayGiphy = giphyResponse.data.images.original.url;
+      $('.giphy').html(`<img src='${displayGiphy}' alt='Random Laugh Giphy' style='width: 100%'>`);
     }
 
   });

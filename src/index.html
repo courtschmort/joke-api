@@ -2,28 +2,39 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Calistoga|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
   <title>We've got jokes!</title>
 </head>
 <body>
   <div class="container">
     <h1>We've got jokes!</h1>
     <form>
-      <label for="location">Select a category:</label>
-      <select id="category" name="category">
-        <option value="Programming">Programming</option>
-        <option value="Miscellaneous">Miscellaneous</option>
-        <option value="Dark">Dark</option>
-        <option value="Any">Any</option>
-      </select>
-      <button type="submit" class="btn btn-primary">Don't make me laugh</button>
+      <div class="form-group row">
+        <div class="col">
+          <label for="location">Select a category:</label>
+          <select class="form-control" id="select-category" name="category">
+            <option value="Programming">Programming</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+            <option value="Dark">Dark</option>
+            <option value="Any">Any</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col">
+          <button type="submit" class="btn btn-dark">Make me laugh</button>
+        </div>
+      </div>
     </form>
     <div class="errors"></div>
     <div class="single">
       <div class="joke"></div>
+      <div class="giphy"></div>
     </div>
     <div class="twopart">
       <div class="joke-setup"></div>
       <div class="joke-delivery"></div>
+      <div class="giphy"></div>
     </div>
   </div>
 </body>
